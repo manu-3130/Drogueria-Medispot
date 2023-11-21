@@ -1,18 +1,14 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    margin: 0px;
+    padding: 0px;
 }
-
-h1 {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-}
+/*INDEX*/
 
 #inventory-section, #add-product-form {
     margin: 20px;
     padding: 20px;
-    border: 1px solid #ccc;
     text-align: left;
 }
 
@@ -27,10 +23,123 @@ button {
 
 #product-list {
     list-style-type: none;
+    padding: 0px;
 }
 
 li {
-    border: 1px solid #ccc;
     margin: 5px;
-    padding: 5px;
+    padding: 8px;
+    background-color: #d6433ec5;
+    border-radius: 50px;
+    font-family: 'Merienda', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
+li div{
+    display: flex;
+    gap: 40px;
+    margin-left: 50px;
+    align-items: center;
+}
+
+#edit{
+    display: none;
+}
+
+.banner{
+    margin: 0px;
+}
+
+h2{
+    font-family: 'Merienda', cursive;
+}
+
+.inputs{
+    display: grid;
+    text-align: start;
+    justify-content: center;
+    margin: 20px;
+}
+
+.inputs input{
+    width: 500px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid #d6443e;
+    font-family: 'Merienda', cursive;
+}
+.inputs label{
+    font-family: 'Merienda', cursive;
+}
+
+.inputs a{
+    color: gray;
+    text-decoration: none;
+    text-align: end;
+}
+
+#login-section button{
+    font-family: 'Merienda', cursive;
+    background-color: #d6443e;
+    padding: 10px;
+    color: white;
+    border: 0px;
+    border-radius: 14px;
+}
+
+body::-webkit-scrollbar {
+    width: 4px;     /* Tamaño del scroll en vertical */
+    height: 4px;    /* Tamaño del scroll en horizontal */
+}
+body::-webkit-scrollbar-thumb {
+    background: #d6443e;
+    border-radius: 4px;
+}
+
+/*FIN INDEX*/
+
+/*ADMIN*/
+
+#product-form input{
+    border: 3px solid #d6443e;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Merienda', cursive;
+    margin: 10px;
+}
+
+#product-form Button{
+    padding: 10px 40px;
+    border-radius: 50px;
+    font-family: 'Merienda', cursive;
+    background: #d6443e;
+    border: 0px;
+    font-size: 15px;
+    color: white;
+    margin-left: 40px;
+}
+
+#product-form Button{
+    padding: 10px 40px;
+    border-radius: 50px;
+    font-family: 'Merienda', cursive;
+    background: #d6443e;
+    border: 0px;
+    font-size: 15px;
+    color: white;
+    margin-left: 40px;
+}
+
+li button{
+    padding: 8px 30px;
+    border-radius: 50px;
+    font-family: 'Merienda', cursive;
+    background: #d6443e;
+    border: 0px;
+    font-size: 13px;
+    color: white;
+}
+
+/*FIN ADMIN*/
