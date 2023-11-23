@@ -40,3 +40,34 @@ function cambiarContraseña(){
         showMessage('Credenciales incorrectas. Inténtelo de nuevo.');
     }
 }
+
+window.onload = function () {
+    google.accounts.id.initialize({
+        client_id: "498012621121-lleev8gr93ln1sllgr4an89s2dgr6puu.apps.googleusercontent.com",
+        callback: handleCredentialResponse
+    });
+
+    google.accounts.id.prompt();
+}
+
+function decodeJwtResponse(token) {
+    var base64Url = token.split(".")[1];
+    var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+    var jsonPayload = decodeURIComponent(
+        atob(base64)
+            .split("")
+            .map(function (c) {
+                return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+            })
+            .join("")
+    );
+
+    return JSON.parse(jsonPayload);
+}
+
+function handleCredentialResponse(response) {
+    const responsePayload = decodeJwtResponse(response.credential);    
+    console.log("Nombre del usuario: ", responsePayload.name);
+    //llevamos al usuario al panel del admin
+    window.location.href = 'admin.html';
+}

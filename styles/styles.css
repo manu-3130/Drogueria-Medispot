@@ -39,7 +39,7 @@ li {
 
 li div{
     display: flex;
-    gap: 40px;
+    gap: 30px;
     margin-left: 50px;
     align-items: center;
 }
