@@ -12,8 +12,18 @@
 </head>
 <body>
     <img src="./imagenes/Banner-06.png" alt="" width="100%">
+    <div>
+        <p class="bienvenida">Bienvenid@ al inventario</p>
+        <div class="mensaje">
+            <p>HOLA!</p>
+            <p id="usuario"></p>
+        </div>
+    </div>
     <div id="add-product-form">
-        <h2>Agregar Producto</h2>
+        <div class="exportar">
+            <h2>Agregar Producto</h2>
+            <button>Exportar</button>
+        </div>
         <form id="product-form">
             <input type="text" id="product-code" placeholder="Código" required>
             <input type="text" id="product-name" placeholder="Nombre del Producto" required>
@@ -33,6 +43,7 @@
         </form>
         <ul id="product-list"></ul>
     </div>
+    <script src="./scripts/login.js"></script>
     <script src="./scripts/inventario.js"></script>
 </body>
 </html>

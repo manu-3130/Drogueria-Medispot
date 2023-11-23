@@ -2,6 +2,13 @@ const users = [
     { username: 'admin', password: 'password' }
 ];
 
+function cambiarContraseñaEnUser(password){
+    localStorage.setItem("contraseña", password);
+    let contraseñaGuardada = localStorage.getItem("contraseña");
+    users[0].password = contraseñaGuardada
+    return contraseñaGuardada;
+}
+
 function showMessage(message) {
     document.getElementById('message').textContent = message;
 }
@@ -27,7 +34,7 @@ function cambiarContraseña(){
 
     if(user){
         if(nuevaPassword.length >= 8 && nuevaPassword == nuevaPassword2){
-            users[0].password = nuevaPassword
+            cambiarContraseñaEnUser(nuevaPassword);
             window.location.href = 'index.html';
         }
         else if(nuevaPassword.length < 8){
@@ -67,7 +74,7 @@ function decodeJwtResponse(token) {
 
 function handleCredentialResponse(response) {
     const responsePayload = decodeJwtResponse(response.credential);    
-    console.log("Nombre del usuario: ", responsePayload.name);
+    localStorage.setItem("nombre", responsePayload.name);
     //llevamos al usuario al panel del admin
     window.location.href = 'admin.html';
 }

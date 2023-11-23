@@ -1,7 +1,15 @@
 let inventory = [
-    { code: "2356", name: 'Acetaminofen', quantity: 10 },
-    { code: "0034", name: 'Diclofenalco', quantity: 20 }
+    { code: "0001", name: 'Acetaminofén pastilla', quantity: 1000},
+    { code: "0002", name: 'Acetaminofén jarabe', quantity: 1000},
+    { code: "0003", name: 'Diclofenaco', quantity: 2000},
+    { code: "0004", name: 'Ácido folico', quantity: 500},
+    { code: "0005", name: 'Ácido salicílico', quantity: 200},
+    { code: "0006", name: 'Acetato de aluminio', quantity: 700},
+    { code: "0004", name: 'Aciclovir', quantity: 900},
 ];
+
+const usuario = document.getElementById("usuario")
+usuario.innerHTML = localStorage.getItem("nombre")
 
 let currentUser = null;
 

@@ -29,7 +29,7 @@ button {
 li {
     margin: 5px;
     padding: 8px;
-    background-color: #d6433ec5;
+    background-color: #057f9ac5;
     border-radius: 50px;
     font-family: 'Merienda', cursive;
     display: flex;
@@ -67,7 +67,7 @@ h2{
     width: 500px;
     padding: 8px;
     border-radius: 8px;
-    border: 2px solid #d6443e;
+    border: 2px solid #057f9a;
     font-family: 'Merienda', cursive;
 }
 .inputs label{
@@ -82,7 +82,7 @@ h2{
 
 #login-section button{
     font-family: 'Merienda', cursive;
-    background-color: #d6443e;
+    background-color: #057f9a;
     padding: 10px;
     color: white;
     border: 0px;
@@ -94,7 +94,7 @@ body::-webkit-scrollbar {
     height: 4px;    /* Tamaño del scroll en horizontal */
 }
 body::-webkit-scrollbar-thumb {
-    background: #d6443e;
+    background: #057f9a;
     border-radius: 4px;
 }
 
@@ -107,7 +107,7 @@ body::-webkit-scrollbar-thumb {
 /*ADMIN*/
 
 #product-form input{
-    border: 3px solid #d6443e;
+    border: 3px solid #057f9a;
     padding: 10px;
     border-radius: 10px;
     font-family: 'Merienda', cursive;
@@ -118,7 +118,7 @@ body::-webkit-scrollbar-thumb {
     padding: 10px 40px;
     border-radius: 50px;
     font-family: 'Merienda', cursive;
-    background: #d6443e;
+    background: #057f9a;
     border: 0px;
     font-size: 15px;
     color: white;
@@ -129,7 +129,7 @@ body::-webkit-scrollbar-thumb {
     padding: 10px 40px;
     border-radius: 50px;
     font-family: 'Merienda', cursive;
-    background: #d6443e;
+    background: #057f9a;
     border: 0px;
     font-size: 15px;
     color: white;
@@ -140,10 +140,41 @@ li button{
     padding: 8px 30px;
     border-radius: 50px;
     font-family: 'Merienda', cursive;
-    background: #d6443e;
+    background: #057f9a;
     border: 0px;
     font-size: 13px;
     color: white;
 }
 
+.exportar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.exportar button{
+    padding: 0px 40px;
+    border-radius: 50px;
+    font-family: 'Merienda', cursive;
+    background: #057f9a;
+    border: 0px;
+    font-size: 15px;
+    height: 50px;
+    color: white;
+}
+
+.mensaje{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    font-family: 'Merienda', cursive;
+    font-size: 20px;
+}
+
+.bienvenida{
+    background-color: #057f9a;
+    color: white;
+    padding: 10px;
+    font-family: 'Merienda', cursive;
+    font-size: 15px;
+}
 /*FIN ADMIN*/
