@@ -2,13 +2,6 @@ const users = [
     { username: 'admin', password: 'password' }
 ];
 
-function cambiarContraseñaEnUser(password){
-    localStorage.setItem("contraseña", password);
-    let contraseñaGuardada = localStorage.getItem("contraseña");
-    users[0].password = contraseñaGuardada
-    return contraseñaGuardada;
-}
-
 function showMessage(message) {
     document.getElementById('message').textContent = message;
 }
@@ -26,16 +19,27 @@ function login() {
     }
 }
 
+function esconder(){
+    const loginCambio1 = document.getElementById("login-section2")
+    loginCambio1.style.display = "grid"
+    const loginCambio2 = document.getElementById("login-section")
+    loginCambio2.style.display = "none"
+}
+
 function cambiarContraseña(){
-    const password = document.getElementById('password').value;
+    const loginCambio1 = document.getElementById("login-section2")
+    const loginCambio2 = document.getElementById("login-section")
+    const password = document.getElementById('passwordActual').value;
     const nuevaPassword = document.getElementById('nuevaPassword').value;
     const nuevaPassword2 = document.getElementById('nuevaPassword2').value;
     const user = users.find(u => u.password == password);
 
     if(user){
         if(nuevaPassword.length >= 8 && nuevaPassword == nuevaPassword2){
-            cambiarContraseñaEnUser(nuevaPassword);
-            window.location.href = 'index.html';
+            loginCambio1.style.display = "none"
+            loginCambio2.style.display = "grid"
+            user.password = nuevaPassword
+            showMessage('Contraseña cambiada, ingrese de nuevo por favor');
         }
         else if(nuevaPassword.length < 8){
             showMessage('Su contraseña debe de tener mas de 8 caracteres. Intentélo de nuevo.');

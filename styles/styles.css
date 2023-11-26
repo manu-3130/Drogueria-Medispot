@@ -102,6 +102,34 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     justify-content: center;
 }
+
+#login-section2{
+    display: none;
+    flex-direction: column;
+}
+
+#login-form2{
+    display: grid;
+    margin: auto;
+    gap:20px;
+}
+
+#login-form2 input{
+    width: 500px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid #057f9a;
+    font-family: 'Merienda', cursive;
+}
+
+#login-form2 button{
+    font-family: 'Merienda', cursive;
+    background-color: #057f9a;
+    padding: 10px;
+    color: white;
+    border: 0px;
+    border-radius: 14px;
+}
 /*FIN INDEX*/
 
 /*ADMIN*/

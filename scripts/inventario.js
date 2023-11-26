@@ -5,7 +5,7 @@ let inventory = [
     { code: "0004", name: 'Ácido folico', quantity: 500},
     { code: "0005", name: 'Ácido salicílico', quantity: 200},
     { code: "0006", name: 'Acetato de aluminio', quantity: 700},
-    { code: "0004", name: 'Aciclovir', quantity: 900},
+    { code: "0007", name: 'Aciclovir', quantity: 900},
 ];
 
 const usuario = document.getElementById("usuario")
@@ -44,13 +44,18 @@ function showInventory() {
         })
         button2.innerHTML = "Eliminar";
         button2.addEventListener("click", (e)=>{
+            let i = 0
             inventory.forEach(product => {
+                i++
                 if(product.code == e.target.className){
                     productList.childNodes.forEach(li =>{
                         if(li.className == product.code){
                             console.log(li)
-                            productList.removeChild(li)
-                            inventory.splice(product.code == e.target.className)
+                            productList.removeChild(li) 
+                            console.log(product)
+                            i = i - 1
+                            console.log(i)
+                            inventory.splice(i, 1)
                             showMessage('Producto eliminado del inventario.');
                         }
                     })
@@ -155,6 +160,26 @@ function edit(){
 function cancelar(){
     const edit = document.getElementById("edit")
     edit.style.display = "none";
+}
+
+function exportPdf() {
+    window.jsPDF = window.jspdf.jsPDF;
+    var doc = new jsPDF();
+    doc.addImage("../imagenes/LOGO-04.png", "PNG", 20, 10, 20, 20);
+    doc.text(20, 40, 'Reporte de inventario Droguería Medispot');
+    const usuario = document.getElementById("usuario")
+    console.log(usuario.textContent)
+    doc.text(20, 50, `Hola, ${usuario.textContent}`)
+    const productList = document.getElementById('product-list');
+    doc.text(20, 62, `Los articulos del inventario son: `)
+    let y = 65;
+    for(let i = 0; i < productList.children.length; i++){
+        articulo = productList.children[i].children[0].textContent
+        y = y + 10
+        doc.text(20, y, `${i+1}. ${articulo}`)
+    }
+
+    doc.save('document.pdf');
 }
 
 showInventory()

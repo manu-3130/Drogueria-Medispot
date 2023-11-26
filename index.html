@@ -43,20 +43,20 @@
             </div>
 
             <div class="inputs">
-                <a>Cambiar contraseña</a>
+                <a href="javascript:esconder()">Cambiar contraseña</a>
                 <button type="button" onclick="login()">Iniciar sesión</button>
             </div>
         </form>
+    </div>
 
-<!--         <div id="login-section2">
-            <h2>Cambiar Contraseña</h2>
-            <form id="login-form">
-                <input type="password" id="password" placeholder="Contraseña actual" required>
-                <input type="password" id="nuevaPassword" placeholder="Contraseña nueva" required>
-                <input type="password" id="nuevaPassword2" placeholder="Ingrese su contraseña nuevamente" required>
-                <button type="button" onclick="cambiarContraseña()">Cambiar contraseña</button>
-            </form>
-        </div> -->
+    <div id="login-section2">
+        <h2>Cambiar Contraseña</h2>
+        <form id="login-form2">
+            <input type="password" id="passwordActual" placeholder="Contraseña actual" required>
+            <input type="password" id="nuevaPassword" placeholder="Contraseña nueva" required>
+            <input type="password" id="nuevaPassword2" placeholder="Ingrese su contraseña nuevamente" required>
+            <button type="button" onclick="cambiarContraseña()">Cambiar contraseña</button>
+        </form>
     </div>
     <div id="message"></div>
     <script src="./scripts/login.js"></script>
