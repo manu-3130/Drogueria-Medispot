@@ -19,10 +19,13 @@ function showMessage(message) {
 }
 
 function showInventory() {
+    const codeProduct = document.getElementById('product-code');
+    const productName = document.getElementById('product-name');
     const productList = document.getElementById('product-list');
     const edit = document.getElementById("edit")
     productList.innerHTML = '';
-
+    codeProduct.value = ""
+    productName.value = ""
     inventory.forEach(product => {
         const li = document.createElement('li');
         const div = document.createElement("div")
@@ -88,6 +91,7 @@ function addProduct() {
 
     if (productName && !isNaN(productQuantity) && productQuantity > 0 && codeProduct.length == 4) {
         inventory.push({code: codeProduct, name: productName, quantity: productQuantity });
+
         showInventory();
         showMessage('Producto agregado al inventario.');
     } else {
